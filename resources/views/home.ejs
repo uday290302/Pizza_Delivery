@@ -1,0 +1,35 @@
+<section class="hero py-16">
+    <div class="container mx-auto flex items-center justify-between">
+        <div class="px-5 w-1/2">
+           <h6 class="px-7 text-lg"><em>R U HUNGRY</em></h6>
+           <h1 class="px-2 text-5xl font-bold">Get some pizza</h1>
+           <button class=" px-6 py-2 rounded-full items-center font-bold text-bold mt-4 btn-primary">ORDER NOW</button>
+        </div>
+        <div class="w-1/2">
+            <img src="/img/hero-pizza.png" alt="">
+        </div>
+    </div>
+</section>
+<section class="menu container mx-auto py-8">
+    <h1 class="text-xl font-bold mb-8">All Pizzas</h1>
+    <div class="grid grid-cols-5 col-gap-20 row-gap-17">
+        <% pizzas.forEach(function(pizza) { %> 
+            <div class="abc w-64">
+                <img class="h-40 mb-4 mx-auto" src="/img/<%= pizza.image%>" alt="">
+                <div class="text-center">
+                    <h2 class=" text-lg"><%= pizza.Pizza_name %></h2>
+                    <h4>Ratings:<%= pizza.ratings %></h4>
+                    <div class="flex items-center justify-around mt-6">
+                        <span class="font-bold text-lg">₹<%= pizza.cost %></span>
+                        <button  data-pizza="<%= JSON.stringify(pizza) %>" class="add-to-cart px-6 py-1 rounded-full items-center font-bold">
+                            <span>+</span>
+                            <span class="ml-1">Add</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        <% }) %>    
+        
+        <script src="../js/app.js"></script>
+    </div>
+</section>
